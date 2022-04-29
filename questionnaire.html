@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>调查问卷</title>
+	<meta name="viewport" content="width=device-width,inital-scale=1.0">
+	<meta name="author" content="Mio泠">
+	<link rel="icon" type="x-ico" href="../jpg&png/mao.ico">
+	
+	<style>
+		[class="font_size"] {
+			font-size: 75%;
+			margin-left: 32%;
+			display: inline-block;
+		}
+		[class*="size1"]{
+			margin-left: 35%;
+		}
+		header{
+			writing-mode: vertical-lr;
+			margin-top: 10%;
+			height: 1600px;
+			width: 1500px;
+		}
+		.font_size2 {
+			font-size: 150%;
+		}
+		.border_set{
+			border:1px dashed #999966;
+			background-color: #e0e0d1;
+			padding: 8px;
+			margin-left: 28%;
+		}
+	
+		main.border{
+			border: 4px solid #333300;
+			height: 1650px;
+			border-radius: 20px / 30px;
+			background-color: aliceblue;
+			position: absolute;
+			left: 30%;
+			right: 20%;
+			top: 30px;
+			bottom: 20px;
+			box-shadow: 0 0 16px 10px rgb(0, 0, 0);
+			font-family: serif;
+			background-origin: padding-box;
+			overflow: hidden;
+		}
+		.margin-left1{
+			margin-left: 46%;
+			font-size: 150%;
+			margin-top: -10%;
+		}
+		.margin{
+			margin-left: 35%;
+			margin-right: 30%;
+		}
+		.text{
+			width: 6em;
+			background-color: #ffccff;
+			color: white;
+			transition: 2s;
+			transition-timing-function: ease-in;
+		}
+		table tr th p{
+			max-width: 600px;
+			min-width: 400px;
+		}
+		#submit{
+			background-color: #067074; 
+			max-width: 80px; 
+			min-width: 50px;
+			height: 40px;
+		}
+		.text:hover{
+			background-color: #ffccff;
+			width: 100%;
+			transition: width 2s;
+			transition-timing-function: ease-in;
+		}
+		#table:hover{
+            background-color: aqua;
+			transition: 2.5s;
+        }
+		#table{
+			transition: 2.5s;
+		}
+		#pass{
+			border: 1px solid rgb(0, 0, 0);
+			border-left: none;
+			width: 22px;
+			height: 20px;
+			position: absolute;
+			right: 258px;
+		}
+		#password{
+			width: 10.5em;
+			height: 18px;
+			border: 1px solid black;
+			border-right: none;
+			color: #999;
+		}
+		#submit:hover{
+			background-color: aquamarine;
+		}
+		#submit:active{
+			background-color: rgb(252, 235, 0);
+		}
+		#name:focus{
+			background-color: rgb(19, 198, 243);
+            color: rgb(255, 251, 25);
+		}
+		#password:focus{
+			background-color: rgb(113, 198, 255);
+			color: black;
+		}
+		#text:focus{
+			background-color: rgb(253, 0, 177);
+            color: rgb(255, 251, 25);;
+		}
+		:disabled{
+			background-color: gray;
+		}
+		
+		option:checked{
+			color:rgb(252, 1, 1);
+		}
+		input:checked + span{
+			font-size: 150%;
+			color: rgb(10, 73, 189);
+			transition: 0.5s;
+		}
+		span{
+			transition: 0.5s;
+		}
+		::selection{
+			background-color: rgb(19, 198, 243);
+            color: rgb(255, 251, 25);
+		}
+		body {
+			background-color: rgb(113, 198, 255);
+		}
+		.two{
+			font-size: 700%;
+			position: absolute;
+			top:60%;
+			left: 45%;
+			z-index: 1;
+			white-space: nowrap;
+			margin-top: 50%;
+			margin-left: -200px;
+			font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+		}
+		.one{
+			font-size: 600%;
+			margin-top: 5%;
+			margin-left: 175px;
+			font-family: cursive;
+			display: flex;
+			flex-direction: row;
+		}
+		.one > div{
+			transition: 2s;
+			transition-delay: 0.5s;
+		}
+		.one > div:nth-child(1):hover{
+			margin-left: -150px;
+			transition: 0.5s;
+			color: red;
+		}
+		.one > div:nth-child(2):hover{
+			transform:translateX(200px);
+			transition: 0.7s;
+			color: #032ff1;
+		}
+		.one > div:nth-child(3):hover{
+			margin-left: -150px;
+			transition: 0.7s;
+			color: rgb(212, 117, 0);
+		}
+		.one > div:nth-child(4):hover{
+			transform:translateX(200px);
+			transition: 0.5s;
+			color: #f309f3;
+		}
+		footer{
+			float: right;
+			margin-top: -1700px;
+			margin-right: 70px;
+		}
+		footer > div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			outline: 4px solid gold;	
+			text-align: center;
+			font-size: 270%;
+			overflow: hidden;
+			margin-bottom: 65px;
+			transform: rotate(45deg);	
+			box-shadow: 0 0 8px 7px black;
+			transition: 1.5s;
+			font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+		}
+		footer > div > span{
+			display: block;
+			margin-top: 25px;
+			transform: rotate(-45deg);
+		}
+		footer > div:hover{
+			color: #e0e0d1;
+			transform: rotateY(180deg);
+			transition: 1s;
+		}
+		#massage{
+			width: 2em;
+			height: 2em;
+			background-color: rgb(113, 198, 255);
+			overflow: hidden;
+		}
+		#massage > span{
+			display: inline-block;
+			margin-top: 7px;
+			margin-left: 5px;
+			font-weight: bolder;
+			z-index: 999;
+		}
+		#con{
+			display: inline-block;
+			position: absolute;
+			text-align: center;
+			font-weight: bold;
+			letter-spacing: 0.25em;
+			line-height: 2em;
+			width: 200px;
+			height: 2em;
+			left: -200px;
+			background-color: rgb(113, 198, 255);
+		}
+		#con > a{
+			text-decoration: none;
+			transition: 0.5s;
+		}
+		#con > a:hover{
+			color: white;
+			transition: 0.5s;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="one">
+			<div>碧</div>
+			<div>蓝</div>
+			<div>航</div>
+			<div>线</div>
+		</div>
+		<div class="two">Azur Lane</div>
+	</header>
+	<main class="border">
+		<img src="../jpg&png/blhx.jpg" alt="blhx" style="display: inline-block;">
+		<div id="massage">
+			<span id="sp">--></span>
+			<div id="con"><a href="#">问题反馈</a></div>
+		</div>
+		<p style="color: #0000ff;text-decoration: overline; display: inline-block;" class="margin-left1"><b>mio泠调查问卷</b></p>
+		<pre class="font_size"><b>发布者：mio泠     有效问答卷数：999   剩余卷数：999<b></pre>
+		<table class="border_set" id="table">
+			<tr>
+				<th><p>本问卷适合：游戏萌新，咸鱼玩家,肝帝及氪佬。</p></th>
+			</tr>
+		</table><br>
+		<p class="font_size1"><b class="font_size2">1</b><b>.基础信息</b>（必填）</p>
+		
+		<form  action=welcome.php method="post" enctype="mutipart/form-data">
+			<input type="hidden" name=MAX_FILE_SIZE value="1024">
+			<label class="font_size1">请上传头像：<input accept="image/*" type="file" name="file"></label>
+		</form><br>
+		
+		<form action=welcome.php method="post" class="margin">
+			<fieldset>									
+				<legend>基础信息</legend>   			 				
+					<label>昵称：<input type="text" name="username" id="name" autofocus required></label><br><br>
+					<label>性别：</label>
+					<label><input type="radio" name="sex" value="man" >男</label>
+					<label><input type="radio" name="sex" value="woman">女</label><br><br>
+					<label>账号：<input type="text" name="text" id="text" required></label><br><br>
+					<label id="pass"><img src="eye.jpg" id="eyes"></label>
+					<label>密码：<input type="password" name="password" id="password" placeholder="仅限英文大小写和数字"required></label><br><br>
+					<label>邮箱：<input type="email" name="email"></label><br><br>
+					<label>开坑日期：<input type="date"name="date"></label><br><br>
+					<label class="leftmargin_j">身份：</label><input type="text" name="number" value="指挥官" disabled><br><br>
+					<label>服务器：</label>
+						<select name="sever">
+							<optgroup label="安卓">
+								<option value="ly">莱茵演习</option>
+								<option value="bb">巴巴罗萨</option>
+								<option value="bw">霸王行动</option>
+							</optgroup>
+							<optgroup label="ios">
+								<option value="xwy">夏威夷</option>
+								<option value="als">阿留申群岛</option>
+							</optgroup>
+							<optgroup label="渠道服">
+								<option value="xwy">皇家巡游</option>
+								<option value="als">大西洋宪章</option>
+								<option value="als">十字军行动</option>
+							</optgroup>
+						</select>
+			</fieldset>
+		</form><br>
+
+		<p class="font_size1"><b class="font_size2">2</b><b>.你玩过哪些游戏？</b>（多选）</p>
+		<form action=welcome.php method="post" class="margin">	
+			<input type="checkbox" name="game[]" value="blhx"><span>碧蓝航线</span>
+			<input type="checkbox" name="game[]" value="gzll"><span>公主焊接</span>
+			<input type="checkbox" name="game[]" value="bhs"><span>崩坏三</span>	
+			<input type="checkbox" name="game[]" value="mrfz"><span>明日方舟</span>
+			<input type="checkbox" name="game[]" value="bt"><span>幻塔</span>
+			<input type="checkbox" name="game[]" value="ys"><span>原神</span>
+			<input type="checkbox" name="game[]" value="wzry"><span>王者荣耀</span>
+		</form>
+		
+		<p class="font_size1"><b class="font_size2">3</b><b>.哪个游戏给你留下的印象最深刻</b>（单选）</p>
+		<form action=welcome.php method="post" class="margin">
+			<select name="x-game">
+				<option value="blhx">碧蓝航线</option>
+				<option value="ht">幻塔</option>
+				<option value="bhs">崩坏三</option>	
+				<option value="gzll">公主焊接</option>
+				<option value="mrfz">明日方舟</option>
+				<option value="ys">原神</option>
+				<option value="snqx">少女前线</option>
+				<option value="wzry">王者荣耀</option>
+			</select>
+		</form>
+		
+		<p class="font_size1"><b class="font_size2">4</b><b>.游戏中是否有过氪金行为？</b></p>
+		<form action=welcome.php method="post" class="margin">			
+			<label><input type="radio" name="money" value="yea" >是</label>
+			<label><input type="radio" name="money" value="no">否</label>
+		</form>
+		
+		<p class="font_size1"><b class="font_size2">5</b><b>.你是从什么途径了解到这个游戏</b>（可多选）</p>
+		<form action=welcome.php method="post" class="margin">
+			<input type="checkbox" name="way[]" value="friend">朋友推荐
+			<input type="checkbox" name="way[]" value="gg">广告
+			<input type="checkbox" name="way[]" value="listen">听别人谈起
+			<input type="checkbox" name="way[]" value="other">其他（请在下面选项中填写）
+		</form>
+		
+		<p class="font_size1"><b class="font_size2">6</b><b>.其他途径</b></p>
+		<form action=welcome.php method="post">
+			<textarea name="other_way" rows="3" cols="35" class="margin"></textarea>
+		</form>
+		
+		<p class="font_size1"><b class="font_size2">7</b><b>.你对这款游戏的热爱程度</b></p>
+		<form action=welcome.php method="post"class="margin">
+		程度：0<input type="range" name="range" min="1" max="100" step="1">100
+		</form>
+		
+		<p class="font_size1"><b class="font_size2">8</b><b>.您的反馈</b></p>
+		<p class="margin"><b>感谢支持！！！</b></p>
+		
+		<form action=welcome.php method="post" class="margin"><p>反馈：</p>
+			<textarea name="other_way" rows="3" cols="20" placeholder="小加加 36D!!!!" class="margin"  style="font-family: cursive; font-size: 200%; "></textarea>
+			<input type="submit" value="提交" id="submit">
+		</form><br><br>
+	<div class="text">
+		#点我加速
+	</div>
+	</main>
+	<footer>
+		<div><span>祝</span></div>
+		<div><span>全</span></div>
+		<div><span>体</span></div>
+		<div><span>指</span></div>
+		<div><span>挥</span></div>
+		<div><span>官</span></div>
+		<div><span>新</span></div>
+		<div><span>春</span></div>
+		<div><span>快</span></div>
+		<div><span>乐</span></div>
+	</footer>
+	<script>
+		var eyes = document.getElementById('eyes');
+		var password = document.getElementById('password');
+		var pass = document.getElementById('pass');
+		var flag = 0;
+		pass.onclick = function(){
+			if(0 == flag){
+				eyes.src='eyes.jpg';
+				password.type='text';
+				flag = 1;
+			}else {
+				eyes.src='eye.jpg';
+				password.type='password';
+				flag = 0;
+			}	
+		}
+	</script>		<!--密码显示隐藏-->
+	<script>
+		var date = new Date();
+		var hours = date.getHours();
+		if( hours < 12){
+			alert('早上好，指挥官，一日之计在于晨。\n记得吃早饭哦！！\n点击 “确定” 进入调查问卷');
+		}
+		else if( hours < 18 ) {
+			alert('中午好,指挥官。\n记得睡午觉哦！\n点击 “确定” 进入调查问卷');
+		}
+		else if( hours < 24 ){
+			alert('晚上好，指挥官。\n忙碌了一天，辛苦了。\n点击 “确定” 进入调查问卷');
+		}
+	</script>		<!--温馨提示-->
+	<script src="../js/animate.js"></script>
+	<script>
+		var sp = document.querySelector('#sp');
+		var con = document.querySelector('#con');
+		sp.addEventListener('mouseenter',function(){
+			moveX(con,0,30);
+		});
+		con.addEventListener('mouseleave',function(){
+			moveX(con,-200,30)
+		});
+	</script>		
+</body>
+</html>
